@@ -84,6 +84,10 @@
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\TestUtils\test\Xunit.DeviceTestUtils\Xunit.DeviceTestUtils.csproj">
+      <Project>{7008A23E-27D1-405C-9E2F-8E9FC420D80B}</Project>
+      <Name>Xunit.DeviceTestUtils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Xamarin.Essentials\Xamarin.Essentials.csproj">
       <Project>{CD6D6AE6-83A1-41B1-BD7C-C555A77C288B}</Project>
       <Name>Xamarin.Essentials</Name>

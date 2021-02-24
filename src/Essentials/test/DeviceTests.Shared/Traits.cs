@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using Xamarin.Essentials;
 using RuntimeDeviceType = Xamarin.Essentials.DeviceType;
-using XUnitFilter = UnitTests.HeadlessRunner.Xunit.XUnitFilter;
 
-namespace DeviceTests
+namespace Xamarin.Essentials.DeviceTests
 {
 	static class Traits
 	{
@@ -48,26 +45,6 @@ namespace DeviceTests
 
 			internal static string ToExclude(bool hasFeature) =>
 				hasFeature ? NotSupported : Supported;
-		}
-
-		internal static List<XUnitFilter> GetCommonTraits(params XUnitFilter[] additionalFilters)
-		{
-			var filters = new List<XUnitFilter>
-			{
-				new XUnitFilter(DeviceType, DeviceTypes.ToExclude, true),
-				new XUnitFilter(InteractionType, InteractionTypes.ToExclude, true),
-				new XUnitFilter(Hardware.Accelerometer, FeatureSupport.ToExclude(HardwareSupport.HasAccelerometer), true),
-				new XUnitFilter(Hardware.Compass, FeatureSupport.ToExclude(HardwareSupport.HasCompass), true),
-				new XUnitFilter(Hardware.Gyroscope, FeatureSupport.ToExclude(HardwareSupport.HasGyroscope), true),
-				new XUnitFilter(Hardware.Magnetometer, FeatureSupport.ToExclude(HardwareSupport.HasMagnetometer), true),
-				new XUnitFilter(Hardware.Battery, FeatureSupport.ToExclude(HardwareSupport.HasBattery), true),
-				new XUnitFilter(Hardware.Flash, FeatureSupport.ToExclude(HardwareSupport.HasFlash), true),
-			};
-
-			if (additionalFilters != null && additionalFilters.Any())
-				filters.AddRange(additionalFilters);
-
-			return filters;
 		}
 
 		internal static IEnumerable<string> GetSkipTraits(IEnumerable<string> additionalFilters = null)

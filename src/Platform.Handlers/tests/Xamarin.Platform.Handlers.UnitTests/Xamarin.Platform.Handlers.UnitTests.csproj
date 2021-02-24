@@ -22,5 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Forms\src\Xamarin.Forms.Core\Xamarin.Forms.Core.csproj" />
     <ProjectReference Include="..\..\src\Xamarin.Platform.Handlers\Xamarin.Platform.Handlers.csproj" />
+    <ProjectReference Include="..\..\..\TestUtils\test\Xunit.TestUtils\Xunit.TestUtils.csproj" />
   </ItemGroup>
+
 </Project>

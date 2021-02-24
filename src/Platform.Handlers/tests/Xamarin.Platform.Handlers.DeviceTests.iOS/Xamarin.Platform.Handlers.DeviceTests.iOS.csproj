@@ -67,32 +67,31 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenTK-1.0" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Essentials">
-      <Version>1.6.1</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.1931</Version>
-    </PackageReference>
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.devices" Version="2.5.25" />
     <PackageReference Include="Microsoft.DotNet.XHarness.TestRunners.Xunit" Version="1.0.0-prerelease.20602.1" />
-    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Essentials\src\Xamarin.Essentials\Xamarin.Essentials.csproj">
+      <Project>{8cb95d25-8442-42bc-82be-319d21138549}</Project>
+      <Name>Xamarin.Essentials</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\TestUtils\test\Xunit.DeviceTestUtils\Xunit.DeviceTestUtils.csproj">
+      <Project>{2d72306f-e09e-41cb-90d9-3777135fa250}</Project>
+      <Name>Xunit.DeviceTestUtils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Xamarin.Platform.Handlers.DeviceTests\Xamarin.Platform.Handlers.DeviceTests.csproj">
       <Project>{DA9E4D76-8CA4-4CC3-A47C-BA75DFF805C6}</Project>
       <Name>Xamarin.Platform.Handlers.DeviceTests</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />

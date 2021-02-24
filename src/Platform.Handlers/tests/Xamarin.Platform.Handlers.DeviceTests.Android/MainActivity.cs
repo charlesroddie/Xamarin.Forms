@@ -1,8 +1,8 @@
-﻿using Android.App;
+﻿using System.Reflection;
+using Android.App;
+using Android.Content.PM;
 using Android.OS;
 using Xunit.Runners.UI;
-using System.Reflection;
-using Android.Content.PM;
 
 namespace Xamarin.Platform.Handlers.DeviceTests
 {
@@ -12,9 +12,9 @@ namespace Xamarin.Platform.Handlers.DeviceTests
 		Theme = "@style/MainTheme",
 		MainLauncher = true,
 		ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : RunnerActivity
+	public class MainActivity : RunnerActivity
 	{
-        protected override void OnCreate(Bundle bundle)
+		protected override void OnCreate(Bundle bundle)
 		{
 			Essentials.Platform.Init(this, bundle);
 			Platform.Init(this);

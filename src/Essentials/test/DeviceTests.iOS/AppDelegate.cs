@@ -2,22 +2,21 @@
 using Foundation;
 using UIKit;
 
-namespace DeviceTests.iOS
+namespace Xamarin.Essentials.DeviceTests.iOS
 {
-    [Register(nameof(AppDelegate))]
-    public partial class AppDelegate : Xunit.Runner.RunnerAppDelegate
-    {
-        public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-        {
-            // We need this to ensure the execution assembly is part of the app bundle
-            AddExecutionAssembly(typeof(Battery_Tests).Assembly);
+	[Register(nameof(AppDelegate))]
+	public partial class AppDelegate : Xunit.Runner.RunnerAppDelegate
+	{
+		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
+		{
+			// We need this to ensure the execution assembly is part of the app bundle
+			AddExecutionAssembly(typeof(Battery_Tests).Assembly);
 
-            // tests can be inside the main assembly
-            AddTestAssembly(Assembly.GetExecutingAssembly());
+			// tests can be inside the main assembly
+			AddTestAssembly(Assembly.GetExecutingAssembly());
+			AddTestAssembly(typeof(Battery_Tests).Assembly);
 
-            AddTestAssembly(typeof(Battery_Tests).Assembly);
-
-            return base.FinishedLaunching(app, options);
-        }
-    }
+			return base.FinishedLaunching(app, options);
+		}
+	}
 }

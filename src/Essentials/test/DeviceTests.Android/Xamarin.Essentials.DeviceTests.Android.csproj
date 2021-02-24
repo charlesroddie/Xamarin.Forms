@@ -68,6 +68,10 @@
     <PackageReference Include="Xamarin.AndroidX.Palette" Version="1.0.0.6" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\TestUtils\test\Xunit.DeviceTestUtils\Xunit.DeviceTestUtils.csproj">
+      <Project>{7008a23e-27d1-405c-9e2f-8e9fc420d80b}</Project>
+      <Name>Xunit.DeviceTestUtils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Xamarin.Essentials\Xamarin.Essentials.csproj">
       <Project>{CD6D6AE6-83A1-41B1-BD7C-C555A77C288B}</Project>
       <Name>Xamarin.Essentials</Name>
